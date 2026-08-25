@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Jenifah 🎉</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background: #0a0e27;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+        }
+
+        /* Starfield background */
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        /* Neon text */
+        .neon-text {
+            position: absolute;
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #00d4ff;
+            text-shadow: 
+                0 0 10px #00d4ff,
+                0 0 20px #00d4ff,
+                0 0 30px #00d4ff,
+                0 0 40px #0099ff;
+            letter-spacing: 3px;
+            animation: flicker 0.15s infinite;
+            white-space: nowrap;
+        }
+
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                text-shadow: 
+                    0 0 10px #00d4ff,
+                    0 0 20px #00d4ff,
+                    0 0 30px #00d4ff,
+                    0 0 40px #0099ff;
+            }
+            20%, 24%, 55% {
+                text-shadow: 
+                    0 0 5px #00d4ff,
+                    0 0 10px #00d4ff;
+            }
+        }
+
+        .text-1 { top: 10%; left: 5%; font-size: 2.5rem; transform: rotate(-15deg); }
+        .text-2 { top: 25%; right: 10%; font-size: 3rem; transform: rotate(20deg); }
+        .text-3 { top: 45%; left: 15%; font-size: 2.8rem; transform: rotate(-10deg); }
+        .text-4 { top: 60%; right: 15%; font-size: 3.2rem; transform: rotate(15deg); }
+        .text-5 { bottom: 15%; left: 10%; font-size: 2.6rem; transform: rotate(-20deg); }
+
+        .delay-1 { animation-delay: 0s; }
+        .delay-2 { animation-delay: 0.3s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.9s; }
+        .delay-5 { animation-delay: 1.2s; }
+
+        /* Hearts */
+        .heart {
+            position: absolute;
+            font-size: 2.5rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) scale(1); opacity: 1; }
+            50% { transform: translateY(-20px) scale(1.1); opacity: 0.8; }
+        }
+
+        .heart-1 { top: 20%; left: 20%; animation-delay: 0s; color: #ff1744; }
+        .heart-2 { top: 35%; right: 15%; animation-delay: 0.5s; color: #ff5252; }
+        .heart-3 { bottom: 25%; left: 15%; animation-delay: 1s; color: #ff1744; }
+        .heart-4 { top: 55%; right: 10%; animation-delay: 1.5s; color: #ff5252; }
+        .heart-5 { bottom: 30%; right: 20%; animation-delay: 2s; color: #ff1744; }
+
+        /* Main message */
+        .main-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 10;
+        }
+
+        .main-neon {
+            font-size: 5rem;
+            color: #00d4ff;
+            text-shadow: 
+                0 0 20px #00d4ff,
+                0 0 40px #00d4ff,
+                0 0 60px #00d4ff,
+                0 0 80px #0099ff;
+            letter-spacing: 5px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                text-shadow: 
+                    0 0 20px #00d4ff,
+                    0 0 40px #00d4ff,
+                    0 0 60px #00d4ff,
+                    0 0 80px #0099ff;
+            }
+            50% {
+                text-shadow: 
+                    0 0 30px #00d4ff,
+                    0 0 50px #00d4ff,
+                    0 0 80px #00d4ff,
+                    0 0 100px #0099ff;
+            }
+        }
+
+        .sub-message {
+            font-size: 1.8rem;
+            color: #00d4ff;
+            text-shadow: 
+                0 0 10px #ff1744,
+                0 0 20px #ff1744;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            margin-top: 40px;
+            font-size: 1.3rem;
+            color: #00d4ff;
+            text-shadow: 
+                0 0 8px #00d4ff,
+                0 0 16px #00d4ff;
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-neon {
+                font-size: 3.5rem;
+            }
+            .sub-message {
+                font-size: 1.3rem;
+            }
+            .neon-text {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="stars" id="starfield"></div>
+
+        <!-- Floating neon text -->
+        <div class="neon-text text-1 delay-1">Happy Birthday</div>
+        <div class="neon-text text-2 delay-2">Jenifah ❤</div>
+        <div class="neon-text text-3 delay-3">Happy Birthday</div>
+        <div class="neon-text text-4 delay-4">Jenifah ❤</div>
+        <div class="neon-text text-5 delay-5">Happy Birthday Jenifah</div>
+
+        <!-- Hearts -->
+        <div class="heart heart-1">❤</div>
+        <div class="heart heart-2">❤</div>
+        <div class="heart heart-3">❤</div>
+        <div class="heart heart-4">❤</div>
+        <div class="heart heart-5">❤</div>
+
+        <!-- Main message -->
+        <div class="main-message">
+            <div class="main-neon">HAPPY BIRTHDAY</div>
+            <div class="sub-message">JENIFAH ❤</div>
+            <div class="subtitle">✨ Wishing you joy, love & happiness ✨</div>
+        </div>
+    </div>
+
+    <script>
+        // Generate random stars
+        const starfield = document.getElementById('starfield');
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starfield.appendChild(star);
+        }
+    </script>
+</body>
+</html>
